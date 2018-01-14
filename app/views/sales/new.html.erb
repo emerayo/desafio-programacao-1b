@@ -1,0 +1,16 @@
+<h1>Importar Vendas</h1>
+
+<%= form_tag (sales_path), multipart: true do %>
+    <div class="form-group">
+
+      <div class="field">
+        <%= label_tag :file, 'Arquivo' %><br>
+        <%#= file_field_tag :file, class: 'form-control' %>
+        <%= file_field_tag :file, class: 'form-control', accept: '.txt', required: true %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= submit_tag 'Importar Vendas', class: 'btn btn-primary' %>
+      <%= link_to 'Voltar', sales_path, class: 'btn btn-danger' %>
+    </div>
+<% end %>

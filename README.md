@@ -37,5 +37,5 @@ rails s
 ```
 7. Abra a página no navegador
 ```
-http://localhost:3000/sales
+http://localhost:3000
 ```

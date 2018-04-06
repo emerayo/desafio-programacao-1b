@@ -5,7 +5,7 @@ O sistema deve receber um arquivo com vendas, tratá-lo e realizar a ingestão d
 
 ## Dependências
 
-1. Ruby 2.3
+1. Ruby 2.5
 2. Rails 5.1.3
 3. SQlite 3
 

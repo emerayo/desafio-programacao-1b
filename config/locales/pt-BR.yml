@@ -218,8 +218,29 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
-  sales:
+  activerecord:
+    attributes:
+      buyer:
+        name: Nome
+      provider:
+        address: Endereço
+        name: Nome
+      sale:
+        description: Descrição
+        price: Preço
+        quantity: Quantidade
+    models:
+      buyer: Comprador
+      provider: Fornecedor
+      sale: Venda
+  action:
+    previus: Voltar
+  file: Arquivo
+  sales_infos:
     amount_is: 'O total é de:'
     imported: 'As vendas foram importadas com sucesso!'
     not_imported: 'As importação de vendas foi mal-sucedida.'
-    no_sales_yet: 'Não existem vendas no sistema ainda.'
+  views:
+    sales:
+      import: 'Importar Vendas'
+      no_sales_created: 'Não existem vendas no sistema ainda.'

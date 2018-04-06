@@ -1,34 +1,34 @@
-<h1>Vendas</h1>
+<h1><%= t('activerecord.models.sale').pluralize %></h1>
 <table class="table table-hover">
 
   <thead>
-    <tr>
-      <th>Comprador</th>
-      <th>Descrição</th>
-      <th>Endereço</th>
-      <th>Valor</th>
-      <th>Provedor</th>
-      <th>Quantidade</th>
-    </tr>
+  <tr>
+    <th><%= t('activerecord.models.buyer') %></th>
+    <th><%= Sale.human_attribute_name(:description) %></th>
+    <th><%= Sale.human_attribute_name(:price) %></th>
+    <th><%= Sale.human_attribute_name(:quantity) %></th>
+    <th><%= Provider.human_attribute_name(:quantity) %></th>
+    <th><%= t('activerecord.models.provider') %></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% if @sales.empty? %>
-      <td class="text-center" colspan="6"><%= t('sales.no_sales_yet') %></td>
-    <% else %>
+  <% if @sales.empty? %>
+    <td class="text-center" colspan="6"><%= t('views.sales.no_sales_created') %></td>
+  <% else %>
 
-      <% @sales.each do |sale| %>
-        <tr>
-          <td><%= sale.buyer_name %></td>
-          <td><%= sale.description %></td>
-          <td><%= sale.provider_address %></td>
-          <td><%= value_to_money(sale.price) %></td>
-          <td><%= sale.provider_name %></td>
-          <td><%= sale.quantity %></td>
-        </tr>
-      <% end %>
-
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.buyer_name %></td>
+        <td><%= sale.description %></td>
+        <td><%= value_to_money(sale.price) %></td>
+        <td><%= sale.quantity %></td>
+        <td><%= sale.provider_address %></td>
+        <td><%= sale.provider_name %></td>
+      </tr>
     <% end %>
+
+  <% end %>
   </tbody>
 
 </table>
@@ -37,4 +37,4 @@
 
 </br>
 
-<%= link_to 'Importar Vendas', new_sale_path, class: 'btn btn-primary' %>
+<%= link_to t('views.sales.import'), new_sale_path, class: 'btn btn-primary' %>

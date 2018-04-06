@@ -1,4 +1,7 @@
 class Sale < ApplicationRecord
-  validates :address, :buyer, :description, :provider, :quantity, presence: true
+  validates :description, :quantity, presence: true
   validates :price, :quantity, numericality: true
+
+  belongs_to :buyer
+  belongs_to :provider
 end

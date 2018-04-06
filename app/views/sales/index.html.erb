@@ -19,11 +19,11 @@
 
       <% @sales.each do |sale| %>
         <tr>
-          <td><%= sale.buyer %></td>
+          <td><%= sale.buyer_name %></td>
           <td><%= sale.description %></td>
-          <td><%= sale.address %></td>
+          <td><%= sale.provider_address %></td>
           <td><%= value_to_money(sale.price) %></td>
-          <td><%= sale.provider %></td>
+          <td><%= sale.provider_name %></td>
           <td><%= sale.quantity %></td>
         </tr>
       <% end %>

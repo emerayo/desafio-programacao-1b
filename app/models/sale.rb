@@ -4,4 +4,8 @@ class Sale < ApplicationRecord
 
   belongs_to :buyer
   belongs_to :provider
+
+  delegate :name, to: :buyer, prefix: true
+  delegate :address, to: :provider, prefix: true
+  delegate :name, to: :provider, prefix: true
 end

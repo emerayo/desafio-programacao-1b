@@ -14,11 +14,9 @@ class SalesCreateService
 
   def create_sales
     parsed_rows = FileParserService.call(file, false)
-    sales = []
 
-    parsed_rows.each do |row|
-      sale = Sale.create(format_sale(row))
-      sales << sale if sale.valid?
+    sales = parsed_rows.map do |row|
+      initialize_sale(row)
     end
 
     amount = sales.sum(&:price)
@@ -30,6 +28,17 @@ class SalesCreateService
     @response = { amount: amount,
                   imported: valid_sales,
                   invalid: file_sales - valid_sales }
+  end
+
+  def initialize_sale(row)
+    return if row.compact.size != 6
+
+    sale = Sale.new(format_sale(row))
+
+    return unless sale.valid?
+
+    sale.save
+    sale
   end
 
   def format_sale(row)

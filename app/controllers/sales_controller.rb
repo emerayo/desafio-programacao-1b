@@ -1,6 +1,8 @@
-include ApplicationHelper
+# frozen_string_literal: true
 
 class SalesController < ApplicationController
+  include ApplicationHelper
+
   def index
     @sales = Sale.all.page(params.fetch(:page, 1)).per(10)
   end

@@ -39,6 +39,10 @@ rails s
 ```
 http://localhost:3000
 ```
+8. To run the tests
+```
+rspec ./spec/
+```
 
 # Português
 
@@ -82,4 +86,8 @@ rails s
 7. Abra a página no navegador
 ```
 http://localhost:3000
+```
+8. Para rodar os testes
+```
+rspec ./spec/
 ```

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Sale < ApplicationRecord
   validates :description, :quantity, presence: true
   validates :price, :quantity, numericality: true

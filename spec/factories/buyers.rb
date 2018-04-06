@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :buyer do |b|
-    b.name 'Snake Plissken'
+  factory :buyer do
+    name Faker::HarryPotter.character
   end
 end

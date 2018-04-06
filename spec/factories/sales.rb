@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :sale do
-    description 'R$20 Sneakers for R$5'
+    description Faker::Commerce.product_name
     price 5.0
     quantity 4
 

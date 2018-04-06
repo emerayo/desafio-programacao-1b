@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :provider do |p|
-    p.name 'Store Emporium'
-    p.address '123 Fake St'
+  factory :provider do
+    name Faker::Company.name
+    address Faker::Address.street_address
   end
 end

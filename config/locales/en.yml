@@ -31,3 +31,29 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      buyer:
+        name: Name
+      provider:
+        address: Address
+        name: Name
+      sale:
+        description: Description
+        price: Price
+        quantity: Quantity
+    models:
+      buyer: Buyer
+      provider: Provider
+      sale: Sales
+  action:
+    previus: Back
+  file: File
+  sales_infos:
+    amount_is: 'The total is:'
+    imported: 'Sales were imported successfully!'
+    not_imported: 'The sales import was unsuccessful.'
+  views:
+    sales:
+      import: 'Import Sales'
+      no_sales_created: 'There are no sales in the system yet.'

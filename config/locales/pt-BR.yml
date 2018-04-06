@@ -219,6 +219,7 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
   sales:
+    amount_is: 'O total é de:'
     imported: 'As vendas foram importadas com sucesso!'
     not_imported: 'As importação de vendas foi mal-sucedida.'
     no_sales_yet: 'Não existem vendas no sistema ainda.'

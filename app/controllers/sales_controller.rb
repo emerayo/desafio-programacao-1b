@@ -8,7 +8,7 @@ class SalesController < ApplicationController
   def new; end
 
   def create
-    response = Sales::Create.call(file_param[:file].tempfile).response
+    response = SalesCreateService.new(file_param[:file].tempfile).call
 
     if response[:imported].positive?
       redirect_to sales_path, notice: positive_response(response)
@@ -24,6 +24,6 @@ class SalesController < ApplicationController
   end
 
   def positive_response(response)
-    t('sales.imported') + ' O total é de: ' + value_to_money(response[:amount])
+    "#{t('sales.imported')} #{t('sales.amount_is')} #{value_to_money(response[:amount])}"
   end
 end

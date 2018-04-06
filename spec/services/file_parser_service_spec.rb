@@ -5,7 +5,7 @@ describe FileParserService, type: :class do
 
   describe 'call method' do
     context 'without header' do
-      let(:parsed_rows) { FileParserService.call(file, false) }
+      let(:parsed_rows) { FileParserService.call(file) }
 
       it 'must return 4 rows without the header' do
         expect(parsed_rows.size).to eq 4

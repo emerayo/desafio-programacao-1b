@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe SalesController, type: :controller do
 
-  let(:file) { fixture_file_upload('dados.txt', 'text/txt') }
-  let(:invalid_file) { fixture_file_upload('dados_invalidos.txt', 'text/txt') }
+  let(:file) { fixture_file_upload('data.txt', 'text/txt') }
+  let(:invalid_file) { fixture_file_upload('empty_data.txt', 'text/txt') }
 
   describe 'GET index' do
     it 'must show sales ' do

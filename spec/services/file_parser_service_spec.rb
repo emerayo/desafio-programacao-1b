@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe FileParserService, type: :class do
-  let(:file) { File.join(Rails.root, '/spec/fixtures/dados.txt') }
+  let(:file) { File.join(Rails.root, '/spec/fixtures/data.txt') }
 
   describe 'call method' do
     context 'without header' do

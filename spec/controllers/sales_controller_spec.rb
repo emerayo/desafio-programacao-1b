@@ -41,7 +41,7 @@ RSpec.describe SalesController, type: :controller do
       end
 
       it 'should not import the sales correctly' do
-        expect(flash[:notice]).to be_eql('As importação de vendas foi mal-sucedida.')
+        expect(flash[:alert]).to be_eql('As importação de vendas foi mal-sucedida.')
       end
 
       it 'should not increase the count of Sales' do

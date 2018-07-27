@@ -1,4 +1,4 @@
-class SalesFileParserService
+class SalesFileParser
   attr_reader :file
 
   def initialize(file)
@@ -12,7 +12,7 @@ class SalesFileParserService
   private
 
   def format_sales
-    parsed_rows = FileParserService.call(file, false)
+    parsed_rows = FileParser.call(file, false)
 
     parsed_rows.map do |row|
       formatted_sale = format_sale(row)

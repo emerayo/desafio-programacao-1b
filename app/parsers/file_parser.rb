@@ -1,4 +1,4 @@
-class FileParserService
+class FileParser
   def self.call(file, header = false, divisor = "\t")
     lines = File.open(file).map do |line|
       line.delete("\n").split(divisor)

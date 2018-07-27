@@ -1,4 +1,4 @@
-class SalesCreateService
+class SalesCreatorService
   attr_reader :amount, :sales
 
   def initialize(sales)

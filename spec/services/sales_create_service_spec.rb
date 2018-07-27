@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe SalesCreateService, type: :class do
+describe SalesCreatorService, type: :class do
   let(:sale1) { { buyer: 'Billy The Kid', description: 'R$10 off R$20 of food',
                   price: '10.0', quantity: '2', provider_address: '987 Fake St',
                   provider_name: "Bob's Pizza" } }
@@ -14,7 +14,7 @@ describe SalesCreateService, type: :class do
   describe 'call method' do
     context 'when receiving a single sale' do
       it 'must add a sale to database' do
-        SalesCreateService.new([sale1]).call
+        SalesCreatorService.new([sale1]).call
 
         expect(Sale.count).to eq 1
       end
@@ -22,7 +22,7 @@ describe SalesCreateService, type: :class do
 
     context 'when receiving two sales' do
       it 'must be able to access amount and sales attributes' do
-        response = SalesCreateService.new([sale1, sale2])
+        response = SalesCreatorService.new([sale1, sale2])
         response.call
 
         expect(Sale.count).to eq 2
@@ -33,7 +33,7 @@ describe SalesCreateService, type: :class do
 
     context 'when receiving an empty array' do
       it 'must not create any sale' do
-        response = SalesCreateService.new([])
+        response = SalesCreatorService.new([])
         response.call
 
         expect(Sale.count).to eq 0

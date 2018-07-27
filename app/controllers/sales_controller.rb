@@ -24,8 +24,8 @@ class SalesController < ApplicationController
   end
 
   def parse_and_create_sales
-    parsed_sales = SalesFileParserService.new(file_param[:file].tempfile).call
-    sales_service = SalesCreateService.new(parsed_sales.compact)
+    parsed_sales = SalesFileParser.new(file_param[:file].tempfile).call
+    sales_service = SalesCreatorService.new(parsed_sales.compact)
     sales_service.call
     sales_service
   end

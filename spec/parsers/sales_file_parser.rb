@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe SalesFileParserService, type: :class do
+describe SalesFileParser, type: :class do
   let(:file) { File.join(Rails.root, '/spec/fixtures/data.txt') }
   let(:file_with_invalid_rows) { File.join(Rails.root, '/spec/fixtures/data_with_invalid_rows.txt') }
   let(:empty_file) { File.join(Rails.root, '/spec/fixtures/empty_data.txt') }
@@ -12,7 +12,7 @@ describe SalesFileParserService, type: :class do
 
   describe 'call method' do
     context 'file with valid rows' do
-      subject { SalesFileParserService.new(file).call }
+      subject { SalesFileParser.new(file).call }
 
       it 'must return an array' do
         expect(subject.is_a? Array).to be_truthy
@@ -28,7 +28,7 @@ describe SalesFileParserService, type: :class do
     end
 
     context 'file with invalid rows' do
-      subject { SalesFileParserService.new(empty_file).call }
+      subject { SalesFileParser.new(empty_file).call }
 
       it 'must return an array' do
         expect(subject.is_a? Array).to be_truthy
@@ -40,7 +40,7 @@ describe SalesFileParserService, type: :class do
     end
 
     context 'file without any rows' do
-      subject { SalesFileParserService.new(file_with_invalid_rows).call }
+      subject { SalesFileParser.new(file_with_invalid_rows).call }
 
       it 'must return an array' do
         expect(subject.is_a? Array).to be_truthy
